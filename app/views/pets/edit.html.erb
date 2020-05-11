@@ -1,0 +1,26 @@
+<div class="navigationbar">
+<%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
+
+<h1> Update A Pet </h1>
+
+<section class="form">
+  <%= form_tag "/pets/#{@pet.id}", method: :patch do %>
+    <p>Edit the information about the pet below</p>
+    <%= label_tag "Add Image Url" %>
+    <%= text_field_tag :image, @pet.image %><br/>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @pet.name %><br/>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @pet.description %><br/>
+    <%= label_tag :age %>
+    <%= text_field_tag :approximate_age, @pet.approximate_age %><br/>
+    <%= label_tag :sex %>
+      <select class="gender" name="sex" id="sex" style="height: 30px !important;" >
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+    <p><%= submit_tag 'Update Pet' %></p>
+  <% end %>
+</section>

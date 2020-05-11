@@ -1,0 +1,18 @@
+<div class="navigationbar">
+  <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
+
+<h1>All Available Pets for Adoption</h1>
+<p>Number of Pets: &nbsp;<%= @shelter.total_pets %></p><br>
+
+<section class="show">
+<% @list_of_pets.each do |pet| %>
+  <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
+  <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "240"</img>
+  <p><button><%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %></button>&nbsp;&nbsp;
+  <button><%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %></button></p>
+  <p>Approximate Age:&nbsp;&nbsp;<%= pet.approximate_age %></p>
+  <p>Sex:&nbsp;&nbsp;<%= pet.sex %></p>
+<% end %>
+</section>

@@ -1,0 +1,17 @@
+<div class="navigationbar">
+  <%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
+
+<h1>All Pets in All Shelters</h1>
+
+<section class="show">
+  <% @pets.each do |pet| %>
+    <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
+    <img src="<%= pet.image %>" alt-"it could be yours" width = "300" height = "240"</img>
+    <p><button><%= link_to 'Update Pet', "/pets/#{pet.id}/edit" %></button>&nbsp;&nbsp;
+    <button><%= link_to 'Delete Pet', "/pets/#{pet.id}", method: :delete %></button></p>
+    <p>Shelter:&nbsp;&nbsp;<%= link_to pet.shelter.name, "/shelters/#{pet.shelter_id}" %>
+    <p>Approximate Age:&nbsp;&nbsp;<%= pet.approximate_age %></p>
+    <p>Sex:&nbsp;&nbsp;<%= pet.sex %></p>
+  <% end %>
+</section>

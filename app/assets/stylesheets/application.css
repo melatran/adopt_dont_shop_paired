@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+a:visited{
+  color: black;
+}
+
+a:link{
+  color: black;
+}
+
+a:hover{
+  color: #f6f2ef;
+}
+
+a:active{
+  color: black;
+}
+
+body {
+   background-color: rosybrown;
+   font-family: "Gill Sans", Gadget, sans-serif;
+   font-size: 25px;
+}
+
+
+h1 {
+  text-align: center;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 45px;
+  color: #f6f2ef;
+  padding: 40px 15px 15px 10px;
+}
+
+button {
+  border-radius:15px;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 20px;
+  background-color: #876452;
+  color: #f6f2ef;
+}
+
+.navigationbar{
+  background-color:#876452;
+  width: 100%;
+  height: 25px;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 18px;
+  text-align: left;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+
+#indexsentence{
+  text-align: center;
+  font-size: 30px;
+  color: #876452;
+}
+
+.form{
+  margin: 30px auto;
+  width: 700px;
+  border: 5px solid #222;
+  background: #fff;
+  padding: 15px;
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 15px;
+  box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.06);
+  border-radius:10px
+}
+
+input[type=submit] {
+  border-radius:15px;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 20px;
+  background-color: #876452;
+  color: #f6f2ef;
+}
+
+.gender{
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 18px;
+  box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.06);
+  border-radius:10px;
+}
+
+.welcome {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+.show {
+  margin: 30px auto;
+  width: 600px;
+  border: 5px solid #222;
+  background: #fff;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.show a{
+  text-decoration: none;
+}
+
+.edit-buttons {
+  text-align: center;
+}
+
+.image {
+  text-align: center;
+}
+
+.shelter {
+  margin: 30px auto;
+  width: 600px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.name {
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #876452;
+  text-align: center;
+}
+
+#status {
+  color: #d91c1c;
+}
