@@ -10,7 +10,7 @@
 <div class="shelter"
   <% @shelters.each do |shelter| %>
     <p><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%>&nbsp;&nbsp;&nbsp;&nbsp;
-    <button><%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %></button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button><%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %></button>
     <button><%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %></button></p>
   <% end %>
 </div>

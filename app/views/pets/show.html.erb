@@ -5,7 +5,7 @@
 
 <h1><%= @pet.name %></h1>
 <div class="edit-buttons">
-  <button><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></button>&nbsp;&nbsp;
+  <button><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></button>
   <button><%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %></button>
 </div>
 
