@@ -1,7 +1,9 @@
-<div class="navigationbar">
-  <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
-</div>
+<ul>
+  <li><%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %></li>
+  <li><%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %></li>
+  <li><%= link_to 'Return to Pets Index', "/pets" %></li>
+  <li><%= link_to 'Return to Shelters Index', "/shelters" %></li>
+</ul>
 
 <h1>All Available Pets for Adoption</h1>
 <p>Number of Pets: &nbsp;<%= @shelter.total_pets %></p><br>
