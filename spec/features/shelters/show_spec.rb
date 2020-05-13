@@ -51,4 +51,13 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     click_on "View All Pets in Paws For You"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
   end
+
+  it "can display all written reviews" do
+    review1 = @shelter_1.reviews.create!(title:"Claws for you",rating: 2,content: "I have never left a place with so many scratches.")
+    visit "/shelters/#{@shelter_1.id}"
+
+    expect(page).to have_content(review1.title)
+    expect(page).to have_content(review1.rating)
+    expect(page).to have_content(review1.content)
+  end
 end

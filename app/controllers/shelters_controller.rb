@@ -5,6 +5,7 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    @reviews = Review.all
   end
 
   def new
@@ -37,8 +38,13 @@ class SheltersController < ApplicationController
     @list_of_pets = @shelter.pets
   end
 
+
+
+
   private
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
   end
+
+
 end
