@@ -1,15 +1,19 @@
 class Favorite
-  attr_reader :pets
+  attr_reader :contents
 
-  def initialize(pets = [])
-    @pets = pets
+  def initialize(initial_contents)
+    @contents = initial_contents ||= Hash.new
   end
 
-  def total_favorites
-    pets.length
+  def total_count
+    @contents.values.sum
   end
 
-  def add_pet(id)
-    @pets << id
+  def add_favorite(id)
+    @contents[id.to_s] = count_of(id) + 1
+  end
+
+  def count_of(id)
+    @contents[id.to_s].to_i
   end
 end
