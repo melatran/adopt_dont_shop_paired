@@ -1,12 +1,7 @@
-<ul>
-  <li><%= link_to 'Return to Pets Index', "/pets" %></li>
-  <li><%= link_to 'Return to Shelters Index', "/shelters"%></li>
-</ul>
-
-<h1> Create a New Shelter </h1>
+<h1> Create a New Application </h1>
 
 <section class="form">
-  <%= form_tag "/shelters" do %>
+  <%= form_tag "/applications" do %>
     <p>Enter the information for a new shelter.</p>
     <%= label_tag :name %>
     <%= text_field_tag :name %><br/>
@@ -18,7 +13,11 @@
     <%= text_field_tag :state %><br/>
     <%= label_tag :zip %>
     <%= text_field_tag :zip %><br/>
+    <%= label_tag :phone_number %>
+    <%= text_field_tag :phone_number %><br/>
+    <%= label_tag :description %>
+    <%= text_field_tag :description %><br/>
 
-    <p><%= submit_tag 'Create Shelter' %></p>
+    <p><%= submit_tag 'Submit Application' %></p>
   <% end %>
 </section>

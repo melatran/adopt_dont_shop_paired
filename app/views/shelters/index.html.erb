@@ -1,7 +1,7 @@
-<div class="navigationbar">
-    <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= link_to 'Create New Shelter', '/shelters/new' %>
-</div>
+<ul>
+  <li><%= link_to 'Return to Pets Index', "/pets" %></li>
+  <li><%= link_to 'Create New Shelter', '/shelters/new' %></li>
+</ul>
 
 <h1>List of Shelters</h1>
 <img class="welcome"src="https://www.countrycommunities.com/wp-content/uploads/2018/09/cat-and-dog.jpg" width="605" height="400"></img>
@@ -9,8 +9,8 @@
 
 <div class="shelter"
   <% @shelters.each do |shelter| %>
-    <p><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%>&nbsp;&nbsp;&nbsp;&nbsp;
-    <button><%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %></button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <p><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}"%>
+    <button><%= link_to 'Edit Shelter', "/shelters/#{shelter.id}/edit" %></button>
     <button><%= link_to 'Delete Shelter', "/shelters/#{shelter.id}", method: :delete %></button></p>
 
   <% end %>

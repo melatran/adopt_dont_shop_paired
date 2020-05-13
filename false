@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20200513012806_add_favorites_to_pets.rb
