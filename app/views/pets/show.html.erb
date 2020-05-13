@@ -1,17 +1,19 @@
-<div class="navigationbar">
-  <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters"%>
-</div>
-<br/>
+<ul>
+  <li><%= link_to 'Return to Pets Index', "/pets" %></li>
+  <li><%= link_to 'Return to Shelters Index', "/shelters"%></li>
+  <li><%= link_to 'Favorite', "/favorites/#{@pet.id}", method: :patch %></li>
+</ul>
+
 <h1><%= @pet.name %></h1>
 <div class="edit-buttons">
-  <button><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></button>&nbsp;&nbsp;
+  <button><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></button>
   <button><%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %></button>
 </div>
 
 <section class="show">
   <p class="image"><img src="<%= @pet.image %>" width = "500" height = "360"></img></p>
-  <p>Description: &nbsp;&nbsp;<%= @pet.description %></p>
-  <p>Approximate Age: &nbsp;&nbsp;<%= @pet.approximate_age %></p>
-  <p>Sex: &nbsp;&nbsp;<%= @pet.sex %></p>
-  <p>Status: &nbsp;&nbsp;<span id="status"><%= @pet.status %></span></p>
+  <p>Description:<%= @pet.description %></p>
+  <p>Approximate Age:<%= @pet.approximate_age %></p>
+  <p>Sex:<%= @pet.sex %></p>
+  <p>Status:<span id="status"><%= @pet.status %></span></p>
 </section>
