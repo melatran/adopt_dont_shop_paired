@@ -45,6 +45,14 @@ h1 {
   padding: 40px 15px 15px 10px;
 }
 
+h2 {
+  text-align: center;
+  font-family: "Gill Sans", Gadget, sans-serif;
+  font-size: 25px;
+  color: #f6f2ef;
+  padding: 40px 15px 15px 10px;
+}
+
 button {
   border-radius:15px;
   font-family: "Gill Sans", Gadget, sans-serif;
@@ -104,6 +112,16 @@ input[type=submit] {
 }
 
 .show {
+  margin: 30px auto;
+  width: 600px;
+  border: 5px solid #222;
+  background: #fff;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.review {
   margin: 30px auto;
   width: 600px;
   border: 5px solid #222;

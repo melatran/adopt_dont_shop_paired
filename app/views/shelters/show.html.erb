@@ -8,9 +8,20 @@
 <div class="edit-buttons">
   <button><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></button>
   <button><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %></button>
+  <button><%= link_to 'Add review for this shelter', "/shelters/#{@shelter.id}/new_review" %></button>
 </div>
 
 <section class="show">
   <p><%= @shelter.address %></p>
   <p><%= @shelter.city %><%= @shelter.state %><%= @shelter.zip %></p>
+</section>
+
+<h2> Reviews </h2>
+<section class="review">
+  <% @shelter.reviews.each do |review|%>
+    <h3><%= review.title %></h3>
+    <p>Rating: <%= review.rating %></p>
+    <p>Content: <%= review.content %></p>
+  <% end %>
+
 </section>
