@@ -34,5 +34,11 @@ RSpec.describe Favorite do
     favorites = Favorite.new([@pet_1, @pet_2])
     expect(favorites.total_favorites).to eq(2)
     end
+
+    it ".add_pet" do
+      favorites = Favorite.new
+      favorites.add_pet(1)
+      expect(favorites.pets).to eq([1])
+    end
   end
 end
