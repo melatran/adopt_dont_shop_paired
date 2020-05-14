@@ -43,7 +43,11 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
   it "I can click on link to return to shelter page" do
     visit "/shelters/#{@shelter_1.id}/edit"
-    click_on "Return to Paws For You"
+
+    within ".edit-buttons-#{@shelter_1.id}" do
+      click_link "Return to Paws For You"
+    end
+    
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
   end
 end

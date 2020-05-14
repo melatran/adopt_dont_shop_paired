@@ -46,7 +46,6 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
   it "I can create a new shelter from link" do
     visit '/shelters'
-    click_on "Create New Shelter"
-    expect(current_path).to eq('/shelters/new')
+    expect(page).to have_content("Create New Shelter")
   end
 end

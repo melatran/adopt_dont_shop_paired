@@ -34,21 +34,12 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     expect(page).to have_content(@shelter_2.zip)
   end
 
-  it "I can click on link and return to shelters index page" do
-    visit "/shelters/#{@shelter_1.id}"
-    click_on "Return to Shelters Index"
-    expect(current_path).to eq("/shelters")
-  end
-
-  it "I can click on link and return to pets index page" do
-    visit "/shelters/#{@shelter_1.id}"
-    click_on "Return to Pets Index"
-    expect(current_path).to eq("/pets")
-  end
-
   it "I can click on link to view all pets in the shelter" do
     visit "/shelters/#{@shelter_1.id}"
-    click_on "View All Pets in Paws For You"
+
+    within ".edit-buttons-#{@shelter_1.id}" do
+      click_link "View All Pets in Paws For You"
+    end
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
   end
 

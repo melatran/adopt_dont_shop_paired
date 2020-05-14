@@ -15,7 +15,11 @@ RSpec.describe "Shelter Pets Index" do
     it "i can create new pet in form" do
 
       visit "/shelters/#{@shelter_1.id}/pets"
-      click_on "Create Pet"
+
+      within ".edit-buttons-#{@shelter_1.id}" do
+        click_link "Create Pet"
+      end
+      
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
 
       fill_in :image, with: "https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg"
@@ -23,6 +27,7 @@ RSpec.describe "Shelter Pets Index" do
       fill_in :description, with: "cuddly but spoiled"
       fill_in :approximate_age, with: "4"
       find('#sex').find(:xpath, 'option[2]').click
+
       click_on 'Create Pet'
 
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
