@@ -23,6 +23,7 @@
     <h3><%= review.title %></h3>
     <p>Rating: <%= review.rating %></p>
     <p>Content: <%= review.content %></p>
+    <button><%=link_to 'Edit review', "/shelters/#{review.shelter_id}/#{review.id}/edit" %></button>
     <button><%=link_to 'Delete review', "/shelters/#{review.shelter_id}/#{review.id}", method: :delete%></button>
   </section>
 

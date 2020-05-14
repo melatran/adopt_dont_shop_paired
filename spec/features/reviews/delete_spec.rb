@@ -19,7 +19,6 @@ RSpec.describe "when on shelter show page" do
       click_link("Delete review")
     end
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
-    save_and_open_page
     expect(page).to_not have_content("Claws for you")
   end
 end

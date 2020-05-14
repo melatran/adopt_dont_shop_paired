@@ -1,0 +1,21 @@
+<div class="navigationbar">
+  <%= link_to 'Return to Pets Index', "/pets" %>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Return to Shelters Index', "/shelters" %>
+</div>
+
+<h1> Update Your Review </h1>
+
+<section class="form">
+  <%= form_tag("/shelters/#{@review.shelter_id}/#{@review.id}", method: :patch) do %>
+    <p>Enter the information for a new review.</p>
+    <%= label_tag "Title" %>
+    <%= text_field_tag :title, @review.title %><br/>
+    <%= label_tag "Rating" %>
+    <%= number_field_tag :rating, @review.rating %><br/>
+    <%= label_tag "Content" %>
+    <%= text_field_tag :content, @review.content %><br/>
+    <%= label_tag "Image" %>
+    <%= text_field_tag :image, @review.image %><br/>
+
+    <%= submit_tag 'Update Review' %>
+  <% end %>
+</section>

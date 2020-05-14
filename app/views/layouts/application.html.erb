@@ -12,6 +12,11 @@
     <nav class="topnav">
       Favorite: <%= favorite.total_count %>
     <nav>
+
+    <% flash.each do |type, message| %>
+      <%= message%>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

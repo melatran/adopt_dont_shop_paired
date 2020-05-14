@@ -19,11 +19,11 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
 
   it "can delete a shelter" do
 
-    visit "/shelters/#{@shelter_1.id}"
+    visit "/shelters/#{@shelter_2.id}"
     expect(page).to have_link("Delete Shelter")
     click_link "Delete Shelter"
     expect(current_path).to eq("/shelters")
-    expect(page).to have_content(@shelter_2.name)
-    expect(page).to_not have_content(@shelter_1.name)
+    expect(page).to have_content(@shelter_1.name)
+    expect(page).to_not have_content(@shelter_2.name)
   end
 end
