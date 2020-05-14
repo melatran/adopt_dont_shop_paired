@@ -17,5 +17,9 @@
     <%= text_field_tag :image %><br/>
 
     <%= submit_tag 'Submit' %>
+    <% flash.each do |type, message| %>
+      <%= message%>
+    <% end %>
+
   <% end %>
 </section>
