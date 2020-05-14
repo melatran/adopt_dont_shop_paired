@@ -19,9 +19,12 @@
 <h2> Reviews </h2>
 <section class="review">
   <% @shelter.reviews.each do |review|%>
+  <section class="review-<%= review.id %>">
     <h3><%= review.title %></h3>
     <p>Rating: <%= review.rating %></p>
     <p>Content: <%= review.content %></p>
-  <% end %>
+    <button><%=link_to 'Delete review', "/shelters/#{review.shelter_id}/#{review.id}", method: :delete%></button>
+  </section>
 
+  <% end %>
 </section>

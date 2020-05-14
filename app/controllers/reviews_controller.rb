@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
 
+  def index
+    @reviews = Review.all
+  end
   def new
     @shelter_id = params[:shelter_id]
   end
@@ -14,6 +17,14 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review not created: please fill out all indicated fields"
       redirect_to "/shelters/#{shelter.id}/new_review"
     end
+  end
+
+  def destroy
+    shelter = Shelter.find(params[:shelter_id])
+
+    Review.destroy(params[:id])
+    redirect_to "/shelters/#{shelter.id}"
+    # code
   end
 
   private
