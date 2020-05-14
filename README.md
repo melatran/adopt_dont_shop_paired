@@ -62,7 +62,7 @@ This project builds off of the solo project, Adopt Don't Shop. Between you and y
 ## User Stories
 
 ```
-[ ] done
+[x] done
 
 User Story 1, Deploy your application to Heroku
 
@@ -122,7 +122,7 @@ And I'm returned to the new form to create a new review
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 5, Edit a Shelter Review
 
@@ -141,7 +141,7 @@ And I can see my updated review
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 6, Edit a Shelter Review, cont.
 
@@ -168,7 +168,7 @@ And I should no longer see that shelter review
 Users will be able to favorite a pet and keep track of pet's they're interested in
 
 ```
-[ ] done
+[x] done
 
 User Story 8, Favorite Indicator
 
