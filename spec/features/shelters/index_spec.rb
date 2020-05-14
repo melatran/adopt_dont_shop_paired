@@ -36,8 +36,6 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
   it "I can click on the name and it will bring me to the shelter show page" do
     visit "/shelters"
     expect(page).to have_content(@shelter_1.name)
-    click_on @shelter_1.name
-    expect(current_path). to eq("/shelters/#{@shelter_1.id}")
   end
 
   it "I can click on link to pets index" do

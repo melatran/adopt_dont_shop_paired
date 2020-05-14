@@ -9,9 +9,18 @@
   </head>
 
   <body>
-    <nav class="topnav">
-      Favorite: <%= favorite.total_count %>
     <nav>
+      <ul class='navbar'>
+      <li><%= link_to 'Return to Shelters Index', "/shelters"%></li>
+      <li><%= link_to 'Return to Pets Index', "/pets" %></li>
+      <p class="favorite">Favorite: <%= favorite.total_count %></p>
+      </ul>
+    <nav>
+
+    <% flash.each do |type, message| %>
+      <%= message%>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

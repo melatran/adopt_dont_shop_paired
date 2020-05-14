@@ -1,11 +1,7 @@
-<ul>
-  <li><%= link_to 'Return to Pets Index', "/pets" %></li>
-  <li><%= link_to 'Return to Shelters Index', "/shelters"%></li>
-  <li><%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %></li>
-</ul>
-
 <h1>Update Shelter</h1>
-
+<div class="edit-buttons">
+  <button><%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %></button>
+</div>
 <section class="form">
   <%= form_tag "/shelters/#{@shelter.id}", method: :patch do %>
     <p>Fill in the blanks with the updated information.</p>
