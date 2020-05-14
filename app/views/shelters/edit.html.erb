@@ -1,7 +1,11 @@
 <h1>Update Shelter</h1>
+
+<<section class="edit-buttons-<%= @shelter.id %>">
 <div class="edit-buttons">
   <button><%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %></button>
 </div>
+</section>
+
 <section class="form">
   <%= form_tag "/shelters/#{@shelter.id}", method: :patch do %>
     <p>Fill in the blanks with the updated information.</p>

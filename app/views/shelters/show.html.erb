@@ -1,10 +1,12 @@
 <h1><%= @shelter.name %></h1>
+<section class="edit-buttons-<%= @shelter.id %>">
 <div class="edit-buttons">
   <button><%= link_to "View All Pets in #{@shelter.name}", "/shelters/#{@shelter.id}/pets" %></button>
   <button><%= link_to 'Update Shelter', "/shelters/#{@shelter.id}/edit" %></button>
   <button><%= link_to 'Delete Shelter', "/shelters/#{@shelter.id}", method: :delete %></button>
   <button><%= link_to 'Add review for this shelter', "/shelters/#{@shelter.id}/new_review" %></button>
 </div>
+</section>
 
 <section class="show">
   <p><%= @shelter.address %></p>
