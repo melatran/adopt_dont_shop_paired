@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
   end
+
   def new
     @shelter_id = params[:shelter_id]
   end
@@ -25,6 +26,22 @@ class ReviewsController < ApplicationController
     Review.destroy(params[:id])
     redirect_to "/shelters/#{shelter.id}"
     # code
+  end
+
+  def edit
+    @review = Review.find(params[:review_id])
+  end
+
+  def update
+    @shelter = Shelter.find(params[:shelter_id])
+    review = Review.find(params[:review_id])
+    if review.update(review_params)
+      flash[:notice] = "You have successfully updated your review"
+      redirect_to "/shelters/#{review.shelter_id}"
+    else
+      redirect_to "/shelters/#{review.shelter_id}/#{review.id}/edit"
+      flash[:notice] = "Updates haven't been made. Fill in all blanks"
+    end
   end
 
   private
