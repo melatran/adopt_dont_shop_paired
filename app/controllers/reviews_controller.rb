@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
     @shelter = Shelter.find(params[:shelter_id])
     review = Review.find(params[:review_id])
     if review.update(review_params)
+      flash[:notice] = "You have successfully updated your review"
       redirect_to "/shelters/#{review.shelter_id}"
     else
       redirect_to "/shelters/#{review.shelter_id}/#{review.id}/edit"
