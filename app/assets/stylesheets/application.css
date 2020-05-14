@@ -139,8 +139,9 @@ input[type=submit] {
   text-align: center;
 }
 
-.image {
+img {
   text-align: center;
+  width: 55%;
 }
 
 .shelter {
