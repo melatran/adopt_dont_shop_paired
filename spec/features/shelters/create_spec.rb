@@ -15,7 +15,7 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     fill_in :city, with: "Arcadia"
     fill_in :state, with: "CA"
     fill_in :zip, with: "91006"
-
+    
     click_on 'Create Shelter'
     expect(current_path).to eq("/shelters")
     expect(page).to have_content("Life is Ruff")

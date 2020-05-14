@@ -23,10 +23,10 @@ RSpec.describe "when i visit the shelter index", type: :feature do
   it "can see all pets in shelter" do
 
     visit "/shelters/#{@shelter_1.id}"
-    expect(page).to have_link("Pets")
 
-    click_on "View All Pets in Paws For You"
-
+    within ".edit-buttons-#{@shelter_1.id}" do
+      click_link "View All Pets in Paws For You"
+    end
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
     expect(page).to have_css("img[src='#{@pet_1.image}']")
     expect(page).to have_content(@pet_1.name)
@@ -70,7 +70,10 @@ RSpec.describe "when i visit the shelter index", type: :feature do
 
   it "I can click on link to create pet" do
     visit "/shelters/#{@shelter_1.id}/pets"
-    click_on "Create Pet"
+
+    within ".edit-buttons-#{@shelter_1.id}" do
+      click_link "Create Pet"
+    end
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
   end
 end
