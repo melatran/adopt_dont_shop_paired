@@ -4,7 +4,7 @@
 <div class="edit-buttons">
   <button><%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %></button>
   <button><%= link_to "Return to #{@shelter.name}", "/shelters/#{@shelter.id}" %></button>
-  <p>Number of Pets: &nbsp;<%= @shelter.total_pets %></p>
+  <p>Number of Pets: <%= @shelter.total_pets %></p>
 </div>
 </section>
 
