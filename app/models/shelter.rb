@@ -3,6 +3,6 @@ class Shelter < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   def total_pets
-    self.pets.count
+    pets.count
   end
 end

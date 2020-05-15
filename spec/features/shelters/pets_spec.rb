@@ -65,7 +65,7 @@ RSpec.describe "when i visit the shelter index", type: :feature do
 
   it "I can see total number of pets a shelter has" do
     visit "/shelters/#{@shelter_1.id}/pets"
-    expect(page).to have_content("1")
+    expect(page).to have_content("Number of Pets: 1")
   end
 
   it "I can click on link to create pet" do

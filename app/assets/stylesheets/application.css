@@ -131,6 +131,10 @@ input[type=submit] {
   text-align: center;
 }
 
+.pets {
+  text-align: center;
+}
+
 .show a{
   text-decoration: none;
 }
