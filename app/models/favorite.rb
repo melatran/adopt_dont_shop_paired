@@ -9,7 +9,7 @@ class Favorite
     @contents.values.sum
   end
 
-  def add_favorite(id)
+  def add_pet(id)
     @contents[id.to_s] = count_of(id) + 1
   end
 

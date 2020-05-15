@@ -152,7 +152,7 @@ And I'm returned to the edit form to edit that review
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 7, Delete a Shelter Review
 
@@ -179,7 +179,7 @@ I can see this favorite indicator from any page in the application
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 9, Favorite Creation
 
