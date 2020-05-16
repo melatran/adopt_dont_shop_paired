@@ -1,6 +1,8 @@
-<li><%= link_to 'Apply to Adopt', "/applications/new" %></li>
-
 <h1>Pets You Have Favorited</h1>
+
+<div class="edit-buttons">
+  <button><%= link_to 'Apply to Adopt', "/applications/new" %></button>
+</div>
 
 <section class="show">
 <% favorite.favorite_pets.each do |pet| %>
