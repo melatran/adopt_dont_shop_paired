@@ -16,4 +16,10 @@ class Favorite
   def count_of(id)
     @contents[id.to_s].to_i
   end
+
+  def favorite_pets #{pet.id => 1} ....use id to find pet object
+    @contents.keys.map do |id|
+      Pet.find(id)
+    end
+  end
 end
