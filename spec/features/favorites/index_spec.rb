@@ -50,4 +50,10 @@ RSpec.describe "Favorite a Pet" do
     expect(page).to have_content("MoMo")
     expect(page).to_not have_content("Lucy")
   end
+
+  it "I can click on favorite indicator to go to favorites" do
+    visit "/favorites"
+    click_on "Favorites: 1"
+    expect(current_path).to eq("/favorites")
+  end
 end
