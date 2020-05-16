@@ -194,7 +194,7 @@ The favorite indicator in the nav bar has incremented by one
 
 
 ```
-[ ] done
+[x] done
 
 User Story 10, Favorite Index Page
 
