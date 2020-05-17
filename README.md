@@ -208,7 +208,7 @@ Each pet in my favorites shows the following information:
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 11, Favorite Indicator links to Index Page
 
@@ -218,7 +218,7 @@ I am taken to the favorites index page
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 12, Can't Favorite a Pet More Than Once
 
