@@ -51,7 +51,43 @@ RSpec.describe "Favorite Pet" do
     within ".pets-#{@pet_2.id}" do
       click_link "Favorite"
     end
-    
+
     expect(page).to have_content("Favorites: 2")
+  end
+
+  it "user can't favorite a pet more than once" do
+    visit "/pets/#{@pet_1.id}"
+
+    within ".pets-#{@pet_1.id}" do
+      click_link "Favorite"
+    end
+
+  end
+
+  it "can't favorite a pet more than once" do
+    visit "/pets/#{@pet_1.id}"
+
+    within ".pets-#{@pet_1.id}" do
+      click_link "Favorite"
+    end
+
+    expect(page).to have_content("Favorites: 1")
+
+    visit "/pets/#{@pet_1.id}"
+
+    expect(page).to have_content("Favorites: 1")
+    expect(page).to_not have_content("Favorites: 2")
+  end
+
+  it "I favorited a pet and favorite button is gone" do
+    visit "/pets/#{@pet_1.id}"
+
+    within ".pets-#{@pet_1.id}" do
+      click_link "Favorite"
+    end
+
+    visit "/pets/#{@pet_1.id}"
+
+    expect(page).to have_content("Remove")
   end
 end

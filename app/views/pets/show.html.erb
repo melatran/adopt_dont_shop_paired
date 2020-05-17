@@ -2,7 +2,11 @@
 
 <div class="pets">
 <section class="pets-<%= @pet.id %>">
-  <button><%= link_to 'Favorite', "/favorites/#{@pet.id}", method: :patch %></button>
+  <% if favorite.contents[@pet.id.to_s].nil? %>
+    <button><%= link_to 'Favorite', "/favorites/#{@pet.id}", method: :patch %></button>
+  <% else %>
+    <button><%= link_to 'Remove', "/favorites/#{@pet.id}", method: :delete %></button>
+  <% end %>
   <button><%= link_to 'Update Pet', "/pets/#{@pet.id}/edit" %></button>
   <button><%= link_to 'Delete Pet', "/pets/#{@pet.id}", method: :delete %></button>
 </section>
