@@ -4,7 +4,11 @@ RSpec.describe "Application Form" do
   describe "When I want to adopt a pet" do
     it "I can fill out new application form" do
       visit '/favorites'
-      click_on "Apply to Adopt"
+
+
+      click_link "Apply to Adopt"
+
+
       expect(current_path).to eq("/applications/new")
 
       fill_in :name, with: "Jae Park"
