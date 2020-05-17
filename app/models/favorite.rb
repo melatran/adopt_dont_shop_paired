@@ -21,10 +21,6 @@ class Favorite
     end
   end
 
-  def included_pet?(id)
-    @contents
-  end
-
   def count_of(id)
     @contents[id.to_s].to_i
   end
@@ -34,5 +30,9 @@ class Favorite
     @contents.keys.map do |id|
       Pet.find(id)
     end
+  end
+
+  def remove_pet(id)
+    @contents.delete(id.to_s)
   end
 end
