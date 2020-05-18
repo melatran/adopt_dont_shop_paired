@@ -7,7 +7,7 @@
 
 <section class="show">
 <% if favorite.favorite_pets.empty?   %>
-   print "No Favorited Pets"
+   <p> "No Favorited Pets"</p>
 <% end %>
 <% favorite.favorite_pets.each do |pet| %>
   <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
