@@ -2,7 +2,10 @@
 
 <section class="form">
   <%= form_tag "/applications" do %>
-    <p>Enter the information for a new shelter.</p>
+    <p>Select the pets you want to adopt.</p>
+    <%= select_tag 'favorite_pets', options_for_select(favorite.favorite_pets.map {|pet| [pet.name, pet.id]}), multiple: true, :required => true, class: "favorite-form"%>
+
+    <p>Enter your information for your application.</p>
     <%= label_tag :name %>
     <%= text_field_tag :name %><br/>
     <%= label_tag :address %>
