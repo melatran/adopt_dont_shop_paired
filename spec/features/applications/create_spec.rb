@@ -60,6 +60,34 @@ RSpec.describe "Application Form" do
       expect(page).to have_content(@pet_2.name)
       expect(page).to_not have_content(@pet_1.name)
     end
+
+    it "I will get errors if application form is not completed in its entirety" do
+      visit "/pets/#{@pet_1.id}"
+      within ".pets-#{@pet_1.id}" do
+        click_link "Favorite"
+      end
+
+      visit "/pets/#{@pet_2.id}"
+      within ".pets-#{@pet_2.id}" do
+        click_link "Favorite"
+      end
+
+      visit '/favorites'
+      click_link "Apply to Adopt"
+      expect(current_path).to eq("/applications/new")
+
+      select("#{@pet_1.name}")
+      fill_in :name, with: "Jae Park"
+      fill_in :address, with: "1234 S Ahgase Way"
+      fill_in :city, with: "Arcadia"
+      fill_in :zip, with: "91006"
+      fill_in :phone_number, with: "626-111-1111"
+      fill_in :description, with: "I work from home so I have plenty of time to be with the pet."
+
+      click_on "Submit Application"
+      expect(page).to have_content("Application not created: please fill out all indicated fields")
+      expect(current_path).to eq("/applications/new")
+    end
   end
 end
 

@@ -156,7 +156,7 @@ I am taken to the favorites index page
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 12, Can't Favorite a Pet More Than Once
 
@@ -173,7 +173,7 @@ And I also see that my favorites indicator has decremented by 1
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 13, Remove a Favorite from Favorites Page
 
