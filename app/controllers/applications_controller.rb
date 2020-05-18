@@ -16,6 +16,10 @@ class ApplicationsController < ApplicationController
       end
       flash[:notice] = "You have successfully submitted your application"
       redirect_to '/favorites'
+    else
+      flash[:notice] = "Application not created: please fill out all indicated fields"
+      redirect_to '/applications/new'
+
     end
   end
 
