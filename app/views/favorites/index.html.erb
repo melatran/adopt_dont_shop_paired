@@ -2,9 +2,13 @@
 
 <div class="edit-buttons">
   <button><%= link_to 'Apply to Adopt', "/applications/new" %></button>
+  <button><%= link_to 'Remove All Favorites', "/favorites/remove_all" %></button>
 </div>
 
 <section class="show">
+<% if favorite.favorite_pets.empty?   %>
+   print "No Favorited Pets"
+<% end %>
 <% favorite.favorite_pets.each do |pet| %>
   <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
   <p><img src="<%= pet.image %>"</img></p>

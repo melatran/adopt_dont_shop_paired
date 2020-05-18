@@ -40,7 +40,7 @@ RSpec.describe "when use visits favorites page" do
 
 
     visit "/favorites"
-    expect(page). to have_content
+
     click_link "Remove All Favorites"
     expect(current_path).to eq("/favorites")
     expect(page).to have_content("Favorites: 0")

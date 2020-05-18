@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
   end
 
   def remove_all
-    session.delete(:favorites)
+    reset_session
     redirect_to '/favorites'
   end
 end
