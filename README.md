@@ -235,7 +235,7 @@ And I also see that my favorites indicator has decremented by 1
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 13, Remove a Favorite from Favorites Page
 
@@ -280,7 +280,7 @@ And the favorites indicator returns to 0
 Users will be able to submit an application for one ore more pets they they've favorited.
 
 ```
-[ ] done
+[x] done
 
 User Story 16, Applying for a Pet
 
@@ -463,7 +463,7 @@ Then all of their pets are deleted as well
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 28, Deleting Shelters Deletes its Reviews
 
