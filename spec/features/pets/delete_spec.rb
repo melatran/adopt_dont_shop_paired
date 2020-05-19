@@ -37,4 +37,27 @@ RSpec.describe "Pet Show Page" do
     expect(page).to have_content("MoMo")
     expect(page).to_not have_content("Lucy")
   end
+  it "cannot delete a pet with an approved application" do
+
+    application = Application.create(
+      name: "Jae Park",
+      address: "1245 S Ahgase Way",
+      city: "Arcadia",
+      state: "CA",
+      zip: "910023",
+      phone_number: "626-111-1111",
+      description: "I work from home so I have plenty of time to be with the pet"
+    )
+
+    PetApplication.create(pet_id: @pet_2.id, application_id: application.id)
+
+    visit "/applications/#{application.id}"
+    click_link "Approve #{@pet_2.name}"
+
+    visit "/pets/#{@pet_2.id}"
+    click_link "Delete Pet"
+    expect(page).to have_content("You cannot delete a pet with a pending adoption")
+
+  end
+
 end
