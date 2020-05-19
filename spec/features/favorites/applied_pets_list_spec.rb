@@ -68,7 +68,9 @@ RSpec.describe "when I visit the favorites index page" do
   end
   it "will display a list of pet names that have 1+ applications" do
     visit "/favorites"
-
+    #piece of logic missing for pet.applications
+    #pet.applications remains an empty array even once
+    #application has been submitted
     within ".applied_pets" do
 
       expect(page).to have_content(@pet_1.name)
