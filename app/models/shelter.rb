@@ -16,7 +16,6 @@ class Shelter < ApplicationRecord
   end
 
 #are there any pending pets?
-
   def pending_pets?
     pets.where(status: "pending").any?
   end
