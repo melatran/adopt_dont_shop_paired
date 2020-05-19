@@ -214,5 +214,4 @@ RSpec.describe "when I visit an applications show page" do
     expect(page).to have_content("Approve MoMo")
 
   end
-
 end

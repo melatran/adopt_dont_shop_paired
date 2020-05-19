@@ -82,4 +82,19 @@ RSpec.describe Shelter do
       expect(@shelter_1.total_applications).to eq(2)
     end
   end
+
+  it "can give the boolean value if there are pending pets" do
+    jae = Application.create(
+      name: "Jae Park",
+      address: "1245 S Ahgase Way",
+      city: "Arcadia",
+      state: "CA",
+      zip: "910023",
+      phone_number: "626-111-1111",
+      description: "I love pets"
+    )
+
+    PetApplication.create(pet_id: @pet_1.id, application_id: jae.id)
+    expect(@shelter_1.pending_pets?).to eq(false)
+  end
 end

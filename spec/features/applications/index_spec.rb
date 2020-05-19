@@ -33,9 +33,8 @@ RSpec.describe "Pet Application Index" do
     visit "/pets/#{pet_1.id}"
     click_link "View All Applicants"
     expect(current_path).to eq("/pets/#{pet_1.id}/applications")
-    expect(page).to have_content("Jae Park")
-    # click_link "Jae Park"
-    # expect(page).to eq("applications/jae.id")
+    click_link "Jae Park"
+    expect(current_path).to eq("/applications/#{jae.id}")
   end
 
   it "will display a message when there are no applicants" do

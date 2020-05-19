@@ -1,16 +1,18 @@
 <h1><%= @application.name%>'s Applications</h1>
 
+<section class="show">
 <p><%= @application.address %></p>
-<p><%= @application.city %></p>
-<p><%= @application.state %></p>
-<p><%= @application.zip %></p>
-<p><%= @application.phone_number %></p>
-<p><%= @application.description %></p>
+<p><%= @application.city %>, <%= @application.state %> <%= @application.zip %></p>
+<p>Phone Number: <%= @application.phone_number %></p>
+<p>Description: <%= @application.description %></p>
+
+<h3> Pets <%= @application.name %> Has Applied For </h3>
 <% @application.pets.each do |pet| %>
   <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
     <% if pet.status == "adoptable"%>
-      <p><%= link_to "Approve #{pet.name}", "/pets/#{pet.id}", method: :put%></p>
+      <button><%= link_to "Approve #{pet.name}", "/pets/#{pet.id}", method: :put%></button>
     <% elsif pet.status == "pending"%>
-      <p><%= link_to "Unapprove #{pet.name}", "/pets/#{pet.id}", method: :put%></p>
+      <button><%= link_to "Unapprove #{pet.name}", "/pets/#{pet.id}", method: :put%></button>
     <% end %>
 <% end %>
+</section>
