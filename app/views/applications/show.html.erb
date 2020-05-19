@@ -1,0 +1,11 @@
+<h1><%= @application.name%>'s Applications</h1>
+
+<p><%= @application.address %></p>
+<p><%= @application.city %></p>
+<p><%= @application.state %></p>
+<p><%= @application.zip %></p>
+<p><%= @application.phone_number %></p>
+<p><%= @application.description %></p>
+<% @application.pets.each do |pet| %>
+  <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
+<% end %>
