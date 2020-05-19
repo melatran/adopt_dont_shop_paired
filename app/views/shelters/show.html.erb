@@ -10,7 +10,11 @@
 
 <section class="show">
   <p><%= @shelter.address %></p>
-  <p><%= @shelter.city %><%= @shelter.state %><%= @shelter.zip %></p>
+  <p><%= @shelter.city %> , <%= @shelter.state %> <%= @shelter.zip %></p>
+  <h5> Statistics </h5>
+  <p>Average Rating: <%= @shelter.average_rating.round(1)%></p>
+  <p>Number of Pets: <%= @shelter.total_pets %></p>
+  <p>Number of Applications: <%= @shelter.total_applications %></p>
 </section>
 
 <h2> Reviews </h2>
