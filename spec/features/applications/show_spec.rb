@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe "when I visit the favorites index page" do
+RSpec.describe "when I visit an applications show page" do
   before :each do
     @shelter_1 = Shelter.create(
       name: "Paws For You",
@@ -24,37 +24,20 @@ RSpec.describe "when I visit the favorites index page" do
       sex: "male",
       shelter_id: @shelter_1.id
     )
-
     visit "/pets/#{@pet_1.id}"
-
     within ".pets-#{@pet_1.id}" do
       click_link "Favorite"
     end
-    visit "/pets/#{@pet_2.id}"
 
+    visit "/pets/#{@pet_2.id}"
     within ".pets-#{@pet_2.id}" do
       click_link "Favorite"
     end
 
     visit '/favorites'
     click_link "Apply to Adopt"
-    expect(current_path).to eq("/applications/new")
 
     select("#{@pet_1.name}")
-    fill_in :name, with: "Jae Park"
-    fill_in :address, with: "1234 S Ahgase Way"
-    fill_in :city, with: "Arcadia"
-    fill_in :state, with: "CA"
-    fill_in :zip, with: "91006"
-    fill_in :phone_number, with: "626-111-1111"
-    fill_in :description, with: "I work from home so I have plenty of time to be with the pet."
-
-    click_on "Submit Application"
-
-    visit '/favorites'
-    click_link "Apply to Adopt"
-    expect(current_path).to eq("/applications/new")
-
     select("#{@pet_2.name}")
     fill_in :name, with: "Jae Park"
     fill_in :address, with: "1234 S Ahgase Way"
@@ -66,27 +49,19 @@ RSpec.describe "when I visit the favorites index page" do
 
     click_on "Submit Application"
   end
-  xit "will display a list of pet names that have 1+ applications" do
-    visit "/favorites"
+  it "should display all the apps info and the pets that app is for" do
+    application = Application.last
+    visit "/applications/#{application.id}"
 
-    within ".applied_pets" do
-
-      expect(page).to have_content(@pet_1.name)
-      expect(page).to have_content(@pet_2.name)
-
-      click_link "#{@pet_1.name}"
-    end
-
-    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to have_content(application.name)
+    expect(page).to have_content(application.address)
+    expect(page).to have_content(application.city)
+    expect(page).to have_content(application.state)
+    expect(page).to have_content(application.zip)
+    expect(page).to have_content(application.phone_number)
+    expect(page).to have_content(application.description)
+    expect(page).to have_content(application.pets.first.name)
+    expect(page).to have_content(application.pets.last.name)
   end
 
 end
-# [ ] done
-#
-# User Story 18, List of Pets that have applications on them
-#
-# As a visitor
-# After one or more applications have been created
-# When I visit the favorites index page
-# I see a section on the page that has a list of all of the pets that have at least one application on them
-# Each pet's name is a link to their show page
