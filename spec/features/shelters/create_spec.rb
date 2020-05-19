@@ -15,10 +15,20 @@ RSpec.describe "as a user, when i visit the shelters index", type: :feature do
     fill_in :city, with: "Arcadia"
     fill_in :state, with: "CA"
     fill_in :zip, with: "91006"
-    
+
     click_on 'Create Shelter'
     expect(current_path).to eq("/shelters")
+    expect(page).to have_content("Shelter successfully created!")
     expect(page).to have_content("Life is Ruff")
+  end
+
+  it "can display a message if all fields not filled in" do
+    visit "/shelters/new"
+    fill_in :name, with: "Life is Ruff"
+    fill_in :address, with: "1234 S Ahgase Way"
+    click_on 'Create Shelter'
+    
+    expect(page).to have_content("Failure! Please fill in all fields!")
   end
 
   it "I can click on link and return to shelters index page" do

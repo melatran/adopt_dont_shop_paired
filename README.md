@@ -367,7 +367,7 @@ Each applicant's name is a link to their application show page
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 21, Pet Applications Index Page When No Applications
 
@@ -473,7 +473,7 @@ All reviews associated with that shelter are also deleted
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 29, Flash Messages for Shelter Create and Update
 
@@ -484,7 +484,7 @@ I see a flash message indicating which field(s) I am missing
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 30, Shelter Statistics
 

@@ -12,9 +12,14 @@ class SheltersController < ApplicationController
   end
 
   def create
-    shelter = Shelter.create!(shelter_params)
-    shelter.save
-    redirect_to '/shelters'
+    shelter = Shelter.new(shelter_params)
+    if shelter.save
+      flash[:notice] = "Shelter successfully created!"
+      redirect_to '/shelters'
+    else
+      flash[:notice] = "Failure! Please fill in all fields!"
+      redirect_to "/shelters/new"
+    end
   end
 
   def edit
@@ -37,11 +42,9 @@ class SheltersController < ApplicationController
     @list_of_pets = @shelter.pets
   end
 
-
   private
+
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
   end
-
-
 end
