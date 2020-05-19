@@ -1,4 +1,8 @@
 class ApplicationsController < ApplicationController
+  def index
+    @favorited_pets = Pet.find(params[:id])
+  end
+
   def new
     @pets = favorite.favorite_pets
   end

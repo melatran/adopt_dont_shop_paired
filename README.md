@@ -235,7 +235,7 @@ And I also see that my favorites indicator has decremented by 1
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 13, Remove a Favorite from Favorites Page
 
@@ -280,7 +280,7 @@ And the favorites indicator returns to 0
 Users will be able to submit an application for one ore more pets they they've favorited.
 
 ```
-[ ] done
+[x] done
 
 User Story 16, Applying for a Pet
 
@@ -367,7 +367,7 @@ Each applicant's name is a link to their application show page
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 21, Pet Applications Index Page When No Applications
 
@@ -463,7 +463,7 @@ Then all of their pets are deleted as well
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 28, Deleting Shelters Deletes its Reviews
 
@@ -473,7 +473,7 @@ All reviews associated with that shelter are also deleted
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 29, Flash Messages for Shelter Create and Update
 
@@ -484,7 +484,7 @@ I see a flash message indicating which field(s) I am missing
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 30, Shelter Statistics
 

@@ -1,0 +1,11 @@
+<h1>All Applicants </h1>
+
+<section class="show">
+  <% if @favorited_pets.applications.empty?   %>
+     <p> "There are no applications for this pet"</p>
+  <% end %>
+
+  <% @favorited_pets.applications.each do |application|%>
+    <p><%= link_to "#{application.name}", "/applications/#{application.id}" %></p>
+  <%end%>
+</section>
