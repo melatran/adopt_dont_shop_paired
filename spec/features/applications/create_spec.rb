@@ -89,24 +89,3 @@ RSpec.describe "Application Form" do
     end
   end
 end
-
-
-# User Story 16, Applying for a Pet
-#
-# As a visitor
-# When I have added pets to my favorites list
-# And I visit my favorites page ("/favorites")
-# I see a link for adopting my favorited pets
-# When I click that link I'm taken to a new application form
-# At the top of the form, I can select from the pets of which I've favorited for which I'd like this application to apply towards (can be more than one)
-# When I select one or more pets, and fill in my
-# - Name
-# - Address
-# - City
-# - State
-# - Zip
-# - Phone Number
-# - Description of why I'd make a good home for this/these pet(s)
-# And I click on a button to submit my application
-# I see a flash message indicating my application went through for the pets that were selected
-# And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites
