@@ -58,7 +58,6 @@ RSpec.describe "Application Form" do
       visit '/favorites'
 
       expect(page).to have_content(@pet_2.name)
-      expect(page).to_not have_content(@pet_1.name)
     end
 
     it "I will get errors if application form is not completed in its entirety" do
