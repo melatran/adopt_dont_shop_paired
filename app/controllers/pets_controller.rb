@@ -42,8 +42,9 @@ class PetsController < ApplicationController
   def approve
     pet = Pet.find(params[:id])
     if pet.status == "pending"
-      flash[:notice] = "Pet has already been approved for adoption"
-      redirect_to "/pets/#{pet.id}"
+      pet.status = "adoptable"
+      pet.save!
+      redirect_to "/pets/#{pet.id}/applications"
     else
       pet.status = "pending"
       pet.save!

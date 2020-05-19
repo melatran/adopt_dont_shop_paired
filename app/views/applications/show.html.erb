@@ -8,6 +8,9 @@
 <p><%= @application.description %></p>
 <% @application.pets.each do |pet| %>
   <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
-
-  <p> <%= link_to "Approve #{pet.name}", "/pets/#{pet.id}", method: :put%></p>
+    <% if pet.status == "adoptable"%>
+      <p><%= link_to "Approve #{pet.name}", "/pets/#{pet.id}", method: :put%></p>
+    <% elsif pet.status == "pending"%>
+      <p><%= link_to "Unapprove #{pet.name}", "/pets/#{pet.id}", method: :put%></p>
+    <% end %>
 <% end %>
