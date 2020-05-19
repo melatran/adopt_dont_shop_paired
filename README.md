@@ -394,7 +394,7 @@ And I see text on the page that says who this pet is on hold for (Ex: "On hold f
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 23, Users can get approved to adopt more than one pet
 

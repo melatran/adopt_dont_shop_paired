@@ -1,9 +1,5 @@
 class ReviewsController < ApplicationController
 
-  def index
-    @reviews = Review.all
-  end
-
   def new
     @shelter_id = params[:shelter_id]
   end
