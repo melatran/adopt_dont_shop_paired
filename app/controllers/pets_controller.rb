@@ -37,6 +37,7 @@ class PetsController < ApplicationController
   def destroy
     pet = Pet.find(params[:id])
     if pet.status == "adoptable"
+      favorite.remove_pet(pet.id)
       Pet.destroy(params[:id])
       redirect_to '/pets'
     else

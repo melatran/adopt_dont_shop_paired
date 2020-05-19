@@ -57,7 +57,19 @@ RSpec.describe "Pet Show Page" do
     visit "/pets/#{@pet_2.id}"
     click_link "Delete Pet"
     expect(page).to have_content("You cannot delete a pet with a pending adoption")
+  end
 
+  it "deleting a favorited pet will remove it from favorites" do
+    visit "/pets/#{@pet_1.id}"
+
+    within ".pets-#{@pet_1.id}" do
+      click_link "Favorite"
+    end
+
+    visit "/pets/#{@pet_1.id}"
+    click_link "Delete Pet"
+
+    expect(page).to have_content("Favorites: 0")
   end
 
 end
