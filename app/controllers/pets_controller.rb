@@ -39,6 +39,13 @@ class PetsController < ApplicationController
     redirect_to '/pets'
   end
 
+  def approve
+    pet = Pet.find(params[:id])
+    pet.status = "pending"
+    pet.save!
+    redirect_to "/pets/#{pet.id}"
+  end
+
   private
   def pet_params
     params.permit(:image, :name, :approximate_age, :description, :sex, :status, :favorite)

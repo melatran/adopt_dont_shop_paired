@@ -12,7 +12,7 @@ RSpec.describe "when I visit an applications show page" do
 
     @pet_1 = @shelter_1.pets.create(
       image: 'https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg',
-      name: "MoMo",
+      name: "Momo",
       approximate_age: "4",
       sex: "male",
       shelter_id: @shelter_1.id
@@ -26,6 +26,13 @@ RSpec.describe "when I visit an applications show page" do
       shelter_id: @shelter_1.id
     )
     @application = @pet_1.applications.create!(name: "Jae Park",
+                                            address: "1234 S Ahgase Way",
+                                            city: "Arcadia",
+                                            state: "CA",
+                                            zip: "91006",
+                                            phone_number: "626-111-1111",
+                                            description: "I work from home so I have plenty of time to be with the pet.")
+    @application1 = @pet_1.applications.create!(name: "Mae Park",
                                             address: "1234 S Ahgase Way",
                                             city: "Arcadia",
                                             state: "CA",
@@ -49,17 +56,19 @@ RSpec.describe "when I visit an applications show page" do
     expect(page).to have_content(application.pets.last.name)
   end
 
+
   it "should be able to approve pet for adoption" do
 
     application = Application.last
     visit "/applications/#{application.id}"
 
+
     click_link "Approve Momo"
 
     expect(current_path).to eq("/pets/#{@pet_1.id}")
     expect(page).to have_content("pending")
-    expect(page).to have_content("On hold for #{application.name}")
-
+    expect(page).to have_content("On hold for #{@application1.name}")
+    #need to connect pet with application name for display message
   end
 
 end

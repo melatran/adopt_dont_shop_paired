@@ -20,3 +20,7 @@
   <p>Sex:<%= @pet.sex %></p>
   <p>Status:<span id="status"><%= @pet.status %></span></p>
 </section>
+
+<% if @pet.status == "pending" %>
+  On hold for Mae Park
+<% end %>

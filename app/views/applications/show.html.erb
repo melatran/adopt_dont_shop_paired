@@ -8,4 +8,6 @@
 <p><%= @application.description %></p>
 <% @application.pets.each do |pet| %>
   <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
+
+  <p> <%= link_to "Approve #{pet.name}", "/pets/#{pet.id}", method: :put%></p>
 <% end %>
