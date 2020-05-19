@@ -32,17 +32,14 @@ RSpec.describe "when I visit the favorites index page" do
                                             phone_number: "626-111-1111",
                                             description: "I work from home so I have plenty of time to be with the pet.")
 
-
-
-
   end
-  xit "will display a list of pet names that have 1+ applications" do
+  
+  it "will display a list of pet names that have 1+ applications" do
     visit "/favorites"
 
     within ".applied_pets" do
 
       expect(page).to have_content(@pet_1.name)
-      # expect(page).to have_content(@pet_2.name)
 
       click_link "#{@pet_1.name}"
 
