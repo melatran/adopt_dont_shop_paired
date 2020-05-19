@@ -19,8 +19,16 @@ RSpec.describe "Shelter Pets Index" do
       within ".edit-buttons-#{@shelter_1.id}" do
         click_link "Create Pet"
       end
-      
+
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+
+      fill_in :image, with: "https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg"
+      fill_in :name, with: "MoMo"
+
+      click_on 'Create Pet'
+
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+      expect(page).to have_content("Pet not created: please fill out all forms")
 
       fill_in :image, with: "https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg"
       fill_in :name, with: "MoMo"
@@ -32,6 +40,7 @@ RSpec.describe "Shelter Pets Index" do
 
       expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
       expect(page).to have_content("MoMo")
+      expect(page).to have_content("Pet successfully created!")
     end
   end
 
