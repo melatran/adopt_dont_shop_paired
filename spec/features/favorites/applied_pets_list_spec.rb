@@ -70,6 +70,7 @@ RSpec.describe "when I visit the favorites index page" do
     visit "/favorites"
 
     within ".applied_pets" do
+
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_2.name)
 

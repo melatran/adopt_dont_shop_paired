@@ -7,10 +7,19 @@
 
 <section class="show">
 <% if favorite.favorite_pets.empty?   %>
-   print "No Favorited Pets"
+   No Favorited Pets
 <% end %>
 <% favorite.favorite_pets.each do |pet| %>
   <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
   <p><img src="<%= pet.image %>"</img></p>
 <% end %>
+</section>
+
+<h2> Pets With Applications </h2>
+<section class="applied_pets" >
+  <% favorite.favorite_pets.each do |pet| %>
+    <% if !pet.applications.empty? %>
+      <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
+    <% end %>
+  <% end %>
 </section>
