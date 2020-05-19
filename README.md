@@ -250,7 +250,7 @@ And I also see that the favorites indicator has decremented by 1
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 14, No Favorites Page
 
@@ -261,7 +261,7 @@ I see text saying that I have no favorited pets
 ```
 
 ```
-[ ] done
+[x ] done
 
 User Story 15, Remove all Favorite from Favorites Page
 
@@ -304,7 +304,7 @@ And I'm taken back to my favorites page where I no longer see the pets for which
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 17, Incomplete application for a Pet
 
@@ -323,7 +323,7 @@ And I see a flash message indicating that I must complete the form in order to s
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 18, List of Pets that have applications on them
 
@@ -335,7 +335,7 @@ Each pet's name is a link to their show page
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 19, Application Show Page
 
@@ -354,7 +354,7 @@ I can see the following:
 
 
 ```
-[ ] done
+[x] done
 
 User Story 20, Pet Applications Index Page
 
@@ -377,7 +377,7 @@ I see a message saying that there are no applications for this pet yet
 ```
 
 ```
-[ ] done
+[kinda] done
 
 User Story 22, Approving an Application
 
@@ -387,11 +387,14 @@ For every pet that the application is for, I see a link to approve the applicati
 When I click on a link to approve the application for one particular pet
 I'm taken back to that pet's show page
 And I see that the pets status has changed to 'pending'
+
+this is kinda done
+
 And I see text on the page that says who this pet is on hold for (Ex: "On hold for John Smith", given John Smith is the name on the application that was just accepted)
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 23, Users can get approved to adopt more than one pet
 
@@ -404,7 +407,7 @@ I'm able to approve the application for any number of pets
 ```
 User Story 24, Pets can only have one approved application on them at any time
 
-[ ] done
+[x] done
 
 As a visitor
 When a pet has more than one application made for them
@@ -528,7 +531,7 @@ They are also removed from the favorites list
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 33, Flash Message for Pet Create and Update
 

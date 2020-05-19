@@ -31,8 +31,20 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
   end
 
+  # def approve
+  #   @application = Application.find(params[:id])
+  #   require "pry"; binding.pry
+  #   pet.status = "pending"
+  #   flash[:notice] = "On hold for #{@application.name}"
+  #   redirect_to "/pets/#{@pet.id}"
+  # end
+
   private
   def application_params
     params.permit(:name, :address, :city, :state, :zip, :phone_number, :description)
+  end
+
+  def pet_params
+    params.permit(:image, :name, :approximate_age, :description, :sex, :status, :favorite)
   end
 end

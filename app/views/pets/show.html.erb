@@ -20,3 +20,9 @@
   <p>Sex:<%= @pet.sex %></p>
   <p>Status:<span id="status"><%= @pet.status %></span></p>
 </section>
+
+<% if @pet.status == "pending" %>
+  <% @pet.applications.each do |application| %>
+    <p>On hold for: <%="#{application.name}"%></p>
+  <% end %>
+<% end %>
