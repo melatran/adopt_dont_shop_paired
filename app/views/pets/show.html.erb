@@ -24,3 +24,4 @@
   <% @pet.applications.each do |application| %>
     <p>On hold for: <%= link_to "#{application.name}", "applications/application.id", method: :get%></p>
   <% end %>
+<% end %>
