@@ -17,7 +17,7 @@
 
 <h2> Pets With Applications </h2>
 <section class="applied_pets" >
-  <% favorite.favorite_pets.each do |pet| %>
+  <% @all_pets.each do |pet| %>
     <% if !pet.applications.empty? %>
       <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
     <% end %>
