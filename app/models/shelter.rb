@@ -14,4 +14,10 @@ class Shelter < ApplicationRecord
   def total_applications
     pets.joins(:applications).count
   end
+
+#are there any pending pets?
+
+  def pending_pets?
+    pets.where(status: "pending").any?
+  end
 end
