@@ -377,7 +377,7 @@ I see a message saying that there are no applications for this pet yet
 ```
 
 ```
-[ ] done
+[kinda] done
 
 User Story 22, Approving an Application
 
@@ -387,6 +387,9 @@ For every pet that the application is for, I see a link to approve the applicati
 When I click on a link to approve the application for one particular pet
 I'm taken back to that pet's show page
 And I see that the pets status has changed to 'pending'
+
+this is kinda done
+
 And I see text on the page that says who this pet is on hold for (Ex: "On hold for John Smith", given John Smith is the name on the application that was just accepted)
 ```
 

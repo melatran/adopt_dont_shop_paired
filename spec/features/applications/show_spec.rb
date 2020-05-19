@@ -71,4 +71,47 @@ RSpec.describe "when I visit an applications show page" do
     #need to connect pet with application name for display message
   end
 
+  it "should be able to approve multiple pets for adoption" do
+    shelter_1 = Shelter.create(
+      name: "Paws For You",
+      address: "1234 W Elf Ave",
+      city: "Denver",
+      state: "Colorado",
+      zip: "90210",
+    )
+
+    pet_1 = Pet.create(
+      image: 'https://www.petful.com/wp-content/uploads/2014/01/maltese-1.jpg',
+      name: "MoMo",
+      approximate_age: "4",
+      sex: "male",
+      shelter_id: shelter_1.id
+    )
+
+    application = Application.create(
+      name: "Jae Park",
+      address: "1245 S Ahgase Way",
+      city: "Arcadia",
+      state: "CA",
+      zip: "910023",
+      phone_number: "626-111-1111",
+      description: "I work from home so I have plenty of time to be with the pet"
+    )
+
+    PetApplication.create(pet_id: pet_1.id, application_id: application.id)
+    PetApplication.create(pet_id: @pet_2.id, application_id: application.id)
+
+    visit "/applications/#{application.id}"
+    click_link "Approve MoMo"
+
+    visit "/pets/#{pet_1.id}"
+    expect(page).to have_content("pending")
+
+    visit "/applications/#{application.id}"
+    click_link "Approve Lucy"
+    visit "/pets/#{@pet_2.id}"
+    expect(page).to have_content("pending")
+
+  end
+
 end
