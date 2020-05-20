@@ -50,13 +50,11 @@ class PetsController < ApplicationController
     pet = Pet.find(params[:id])
     if pet.status == "pending"
       pet.status = "adoptable"
-      pet.save!
-      redirect_to "/pets/#{pet.id}/applications"
-    else
+    elsif pet.status == "adoptable"
       pet.status = "pending"
-      pet.save!
-      redirect_to "/pets/#{pet.id}"
     end
+    pet.update(status: pet.status)
+    redirect_to "/pets/#{pet.id}"
   end
 
   private
