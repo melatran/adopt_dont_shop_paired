@@ -23,3 +23,12 @@
     <% end %>
   <% end %>
 </section>
+
+<h2> Pets Approved for Adoption </h2>
+<section class="approved_pets" >
+  <% @all_pets.each do |pet| %>
+    <% if !pet.applications.empty? && pet.status == "pending"%>
+      <p class="name"><%= link_to "#{pet.name}", "/pets/#{pet.id}"%></p>
+    <% end %>
+  <% end %>
+</section>
