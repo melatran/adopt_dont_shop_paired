@@ -56,4 +56,28 @@ RSpec.describe "Favorite a Pet" do
     click_on "Favorites: 1"
     expect(current_path).to eq("/favorites")
   end
+
+  it "I can see all pets that have approved apps" do
+    visit "/favorites"
+
+    application = Application.create(
+      name: "Jae Park",
+      address: "1245 S Ahgase Way",
+      city: "Arcadia",
+      state: "CA",
+      zip: "910023",
+      phone_number: "626-111-1111",
+      description: "I work from home so I have plenty of time to be with the pet"
+    )
+
+    PetApplication.create(pet_id: @pet_1.id, application_id: application.id)
+
+    visit "/applications/#{application.id}"
+    click_link "Approve #{@pet_1.name}"
+
+    visit "/favorites"
+    within ".approved_pets" do
+      expect(page).to have_content(@pet_1.name)
+    end
+  end
 end
