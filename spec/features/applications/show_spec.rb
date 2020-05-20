@@ -209,7 +209,7 @@ RSpec.describe "when I visit an applications show page" do
     expect(page).to_not have_content("Approve MoMo")
     click_link "Unapprove MoMo"
 
-    expect(current_path).to eq("/pets/#{pet_1.id}/applications")
+    expect(current_path).to eq("/pets/#{pet_1.id}")
     visit "/applications/#{application.id}"
     expect(page).to have_content("Approve MoMo")
 
