@@ -15,13 +15,13 @@
 
 <section class="show">
   <p><img src="<%= @pet.image %>"</img></p>
-  <p>Description:<%= @pet.description %></p>
-  <p>Approximate Age:<%= @pet.approximate_age %></p>
-  <p>Sex:<%= @pet.sex %></p>
-  <p>Status:<span id="status"><%= @pet.status %></span></p>
-</section>
-<% if @pet.status == "pending" %>
-  <% @pet.applications.each do |application| %>
-    <p>On hold for: <%= link_to "#{application.name}", "applications/application.id", method: :get%></p>
+  <p>Description: <%= @pet.description %></p>
+  <p>Approximate Age: <%= @pet.approximate_age %></p>
+  <p>Sex: <%= @pet.sex %></p>
+  <p>Status: <span id="status"><%= @pet.status %></span></p>
+    <% @pet.applications.each do |application| %>
+    <% if @pet.status == "pending" %>
+      <p>On hold for: <%= link_to "#{application.name}", "/applications/#{application.id}", method: :get%></p>
+    <% end %>
   <% end %>
-<% end %>
+</section>
